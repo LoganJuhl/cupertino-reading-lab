@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "baseline": {
+    "name": "Cupertino Reading Lab v3",
+    "version": "0.3.0",
+    "folder": "baseline/Cupertino Reading Lab v3",
+    "css_sha256": "9af43cd400bd55e4d3b4ce8b71ab3eba45089e2868d8c53877d57ab629b9336e",
+    "css_bytes": 339032,
+    "files": {
+      "theme.css": "9af43cd400bd55e4d3b4ce8b71ab3eba45089e2868d8c53877d57ab629b9336e",
+      "LICENSE": "ddcd58d133dc5bb956b790693248d26c6e48d8cbb661f3e3a45a82bf70f3e22f",
+      "README.md": "9fc670762bf81d8057b59ceb682e039e113b32b795448fe5561d79c755401779",
+      "manifest.json": "52a745d71e51cd98250341c88b42b0a97401a70906e88eed569e08330b1ffdb4"
+    }
+  },
+  "candidate": {
+    "name": "Cupertino Reading Lab v4",
+    "version": "0.4.0",
+    "minAppVersion": "1.13.4"
+  },
+  "status": "candidate; matched runtime and physical-device acceptance recorded separately",
+  "stages": [
+    {
+      "stage": 0,
+      "key": "00-baseline",
+      "name": "Cupertino Reading Lab v3",
+      "version": "0.3.0",
+      "folder": "baseline/Cupertino Reading Lab v3",
+      "css_sha256": "9af43cd400bd55e4d3b4ce8b71ab3eba45089e2868d8c53877d57ab629b9336e",
+      "css_bytes": 339032,
+      "added_bytes": 0
+    },
+    {
+      "stage": 1,
+      "key": "01-headings",
+      "name": "Cupertino Reading Lab v4 S1 Headings",
+      "version": "0.4.0",
+      "folder": "stages/01-headings/Cupertino Reading Lab v4 S1 Headings",
+      "css_sha256": "20e4e91201483fbee60ab60ad8f42bcbdfd5a282b4dca5c0d46f502eeaa0eeda",
+      "css_bytes": 341998,
+      "added_bytes": 2966,
+      "source_sha256": "9622d545d2a48130d6fa5ae31287ec295efeef6c81eed2fe9dd8e6b2a8b39b4e",
+      "zip_sha256": "36e1178fc2091958b2b614b60ff3ed2f8015580c0f273479a7d636673cf62c31"
+    },
+    {
+      "stage": 2,
+      "key": "02-rhythm",
+      "name": "Cupertino Reading Lab v4",
+      "version": "0.4.0",
+      "folder": "stages/02-rhythm/Cupertino Reading Lab v4",
+      "css_sha256": "0be574bed1eb53477a5c868df2f65dd507df1b8cdb29bfbbb13c68316be49c91",
+      "css_bytes": 343016,
+      "added_bytes": 3984,
+      "source_sha256": "77b8a149f0ff8beb50c74dafcef44f5d9fbaa5a70753977fd32015178e88f181",
+      "zip_sha256": "714b11bd6bb2f5220f3e9d464092757658781e2189dd617f57f1e78934be893c"
+    }
+  ]
+}

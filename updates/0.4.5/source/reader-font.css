@@ -1,0 +1,8 @@
+/* Theme default only: an explicit Appearance reading-font choice still wins.
+ * Interface and monospace font preferences remain app-owned.
+ */
+body,
+.theme-light,
+.theme-dark {
+  --font-text-theme: "Cupertino Newsreader", "Georgia", serif;
+}

@@ -1,0 +1,106 @@
+{
+  "family": "Cupertino Newsreader",
+  "fonttools": "4.60.2",
+  "upstreamCommit": "1ece6a8bfe5db1a2b90c76cc1fe5d3b2eed5dcf3",
+  "license": "SIL Open Font License 1.1; upstream/OFL.txt",
+  "subset": false,
+  "axesFrozen": {
+    "opsz": 24,
+    "wght": [
+      400,
+      500,
+      600,
+      700
+    ]
+  },
+  "faces": [
+    {
+      "file": "CupertinoNewsreader24pt-Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "opticalSize": 24,
+      "bytes": 42868,
+      "sha256": "6bdbc8102cfd17ba8be5d96ed257bc6aa4d434ba5c9226c5a3fc41495045dc65",
+      "glyphCodepoints": 564,
+      "source": "Newsreader[opsz,wght].ttf",
+      "sourceSha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"
+    },
+    {
+      "file": "CupertinoNewsreader24pt-Medium.woff2",
+      "weight": 500,
+      "style": "normal",
+      "opticalSize": 24,
+      "bytes": 44372,
+      "sha256": "c67f34c087f95da2ddca31f043647190289737d2293ba70b29e3f5daf9d629dd",
+      "glyphCodepoints": 564,
+      "source": "Newsreader[opsz,wght].ttf",
+      "sourceSha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"
+    },
+    {
+      "file": "CupertinoNewsreader24pt-SemiBold.woff2",
+      "weight": 600,
+      "style": "normal",
+      "opticalSize": 24,
+      "bytes": 45552,
+      "sha256": "87bfbd76388386fd2214a1abc96e1df88fb539c5b2228c1a13bc92b75dee522d",
+      "glyphCodepoints": 564,
+      "source": "Newsreader[opsz,wght].ttf",
+      "sourceSha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"
+    },
+    {
+      "file": "CupertinoNewsreader24pt-Bold.woff2",
+      "weight": 700,
+      "style": "normal",
+      "opticalSize": 24,
+      "bytes": 44892,
+      "sha256": "06d38d7bef5840733eb03ad7e173cf729d93372fd4d259d0d546cb7ec52ba4dd",
+      "glyphCodepoints": 564,
+      "source": "Newsreader[opsz,wght].ttf",
+      "sourceSha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1"
+    },
+    {
+      "file": "CupertinoNewsreader24pt-Italic.woff2",
+      "weight": 400,
+      "style": "italic",
+      "opticalSize": 24,
+      "bytes": 46040,
+      "sha256": "91a52f814257f86c6382a53f33d3ed0b7fc63a63cc0f03860a1079bce17f4a3c",
+      "glyphCodepoints": 564,
+      "source": "Newsreader-Italic[opsz,wght].ttf",
+      "sourceSha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792"
+    },
+    {
+      "file": "CupertinoNewsreader24pt-MediumItalic.woff2",
+      "weight": 500,
+      "style": "italic",
+      "opticalSize": 24,
+      "bytes": 47932,
+      "sha256": "070a6d43c3245836b5ce80a1d4f0afc1cf8287582b1a589563b1ea0cd1f2eb08",
+      "glyphCodepoints": 564,
+      "source": "Newsreader-Italic[opsz,wght].ttf",
+      "sourceSha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792"
+    },
+    {
+      "file": "CupertinoNewsreader24pt-SemiBoldItalic.woff2",
+      "weight": 600,
+      "style": "italic",
+      "opticalSize": 24,
+      "bytes": 48736,
+      "sha256": "ae15090e52c67e75817ff722c86a38272feff814d44de326ff822159980d8803",
+      "glyphCodepoints": 564,
+      "source": "Newsreader-Italic[opsz,wght].ttf",
+      "sourceSha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792"
+    },
+    {
+      "file": "CupertinoNewsreader24pt-BoldItalic.woff2",
+      "weight": 700,
+      "style": "italic",
+      "opticalSize": 24,
+      "bytes": 48896,
+      "sha256": "34cfafe14f10c39bcd9934b181f737e26470f57b472e6dca5c42ffe929badeb6",
+      "glyphCodepoints": 564,
+      "source": "Newsreader-Italic[opsz,wght].ttf",
+      "sourceSha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792"
+    }
+  ]
+}

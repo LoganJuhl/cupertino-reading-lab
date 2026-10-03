@@ -1,0 +1,44 @@
+/* Cupertino's 100cqw helper uses the outer tab width, including a classic
+ * scrollbar. This clips both edges and makes the whole document scroll
+ * sideways. Only explicit edge-to-edge helper notes get a local inline-size
+ * query container; normal prose keeps the original scrolling architecture.
+ * The scroller's content box excludes its padding and native scrollbar.
+ */
+body:not(.block-width-off) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-reading-view > .markdown-preview-view:is(.table-100, .img-100, .bases-100),
+body:not(.block-width-off) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-source-view:is(.table-100, .img-100, .bases-100) > .cm-editor > .cm-scroller {
+  container-type: inline-size;
+}
+
+body:not(.block-width-off) :is(.table-100, .img-100, .bases-100) {
+  --block-width-max: 100cqw;
+  --crl4-full-width: calc(100cqw + var(--file-margins-x) * 2);
+}
+
+body:not(.block-width-off) .table-100 {
+  --table-line-max-width: var(--crl4-full-width);
+  --table-line-width: var(--crl4-full-width);
+}
+
+body:not(.block-width-off) .img-100 {
+  --img-line-max-width: var(--crl4-full-width);
+  --img-line-width: var(--crl4-full-width);
+}
+
+body:not(.block-width-off) .bases-100 {
+  --bases-line-max-width: var(--crl4-full-width);
+  --bases-line-width: var(--crl4-full-width);
+}
+
+/* Keep a large diagram readable at its native size without pushing all note
+ * content sideways. The diagram's own horizontal scrollbar reaches both ends.
+ */
+.workspace-leaf-content[data-type="markdown"] .mermaid {
+  overflow-x: auto;
+}
+
+/* Match the editor's local display-math scrolling in Reading View. An equation
+ * wider than the prose column must not expand the note's horizontal scroll area.
+ */
+.workspace-leaf-content[data-type="markdown"] .markdown-reading-view .math-block > mjx-container[display="true"] {
+  overflow-x: auto;
+}

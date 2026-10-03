@@ -1,0 +1,28 @@
+{
+  "name": "cupertino-reading-lab-v4",
+  "version": "0.4.5",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build-public.py",
+    "lint": "python3 scripts/lint.py",
+    "check:build": "python3 scripts/check-current-build.py",
+    "check:public": "python3 scripts/check-public.py",
+    "check": "npm run check:build && npm run lint && npm run check:public && npm run test:maintenance",
+    "package:candidate": "python3 scripts/package-current.py --candidate",
+    "package:release": "python3 scripts/package-current.py",
+    "test:maintenance": "python3 scripts/test-maintenance.py"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "description": "A Cupertino-derived Obsidian theme focused on long-form reading and document consumption.",
+  "license": "MIT",
+  "devDependencies": {
+    "stylelint": "17.15.0",
+    "stylelint-config-obsidianmd": "0.1.0",
+    "playwright": "1.62.1",
+    "pngjs": "7.0.0",
+    "postcss": "8.5.28",
+    "postcss-selector-parser": "7.1.6"
+  }
+}

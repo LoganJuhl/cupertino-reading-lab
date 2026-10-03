@@ -1,0 +1,14 @@
+/* Desktop settings popouts can cache their fitted select width before the
+ * stylesheet is ready. Keep native phone sizing so a long option list cannot
+ * force adjacent controls outside the settings pane. */
+body:not(.is-phone) .setting-item-control select.dropdown:not(.is-measuring) {
+  width: auto;
+  max-width: 100%;
+}
+
+/* Phone form rows use full-width controls. Let an adjacent action, such as
+ * Themes > Manage, move below the dropdown instead of overflowing the pane.
+ * Preserve the compact layout of toggles, navigation rows and single actions. */
+body.is-phone .modal.mod-settings .setting-item:not(.mod-toggle, .mod-navigable, .mod-action, .setting-item-heading) .setting-item-control {
+  flex-wrap: wrap;
+}

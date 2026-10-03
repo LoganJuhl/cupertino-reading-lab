@@ -1,0 +1,31 @@
+{
+  "origin": "Static Newsreader QA assets; historical matched-control fonts, not the bundled production font files.",
+  "license": "SIL Open Font License 1.1; see OFL.txt",
+  "fonts": [
+    {
+      "file": "Newsreader24pt-Regular.woff2",
+      "sha256": "12d74b96c68915d4c8d194b3d41d0ddbe08e4a36850aa9d59ee97b096b9a7581",
+      "role": "QA-only static Newsreader; not shipped in theme"
+    },
+    {
+      "file": "Newsreader24pt-Italic.woff2",
+      "sha256": "68a7f9045e416bc204484afa69fdfe43b22e1ad2ca2a269a0b0e3facf014e1ff",
+      "role": "QA-only static Newsreader; not shipped in theme"
+    },
+    {
+      "file": "Newsreader24pt-Medium.woff2",
+      "sha256": "479dac7ed75d12f44e242eefe665125b93a3094ca0bcff1d47326bf5baeec8fd",
+      "role": "QA-only static Newsreader; not shipped in theme"
+    },
+    {
+      "file": "Newsreader24pt-SemiBold.woff2",
+      "sha256": "c9b82d8a28366fbac5f564d05354e722f1021389c87091e8a7e9b6bdc050b858",
+      "role": "QA-only static Newsreader; not shipped in theme"
+    },
+    {
+      "file": "Newsreader24pt-Bold.woff2",
+      "sha256": "1ae94652320afc44962a135de106198f95bab56066e819f9ccdd661fa59de13c",
+      "role": "QA-only static Newsreader; not shipped in theme"
+    }
+  ]
+}

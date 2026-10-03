@@ -1,0 +1,78 @@
+/* V4 / 1. Editorial heading hierarchy using the app's existing type tokens.
+ * The selected reading family and Appearance size remain authoritative.
+ * V3's fixed optical axes, heading width caps and body measure are preserved.
+ */
+.workspace-leaf-content[data-type="markdown"] > .view-content {
+  --h1-size: 1.9em;
+  --h1-weight: 600;
+  --h1-line-height: 1.2;
+  --h1-font: var(--font-text);
+  --h1-letter-spacing: normal;
+  --h2-size: 1.45em;
+  --h2-weight: 600;
+  --h2-line-height: 1.25;
+  --h2-font: var(--font-text);
+  --h2-color: var(--bold-color);
+  --h2-letter-spacing: normal;
+  --h3-size: 1.2em;
+  --h3-weight: 600;
+  --h3-line-height: 1.3;
+  --h3-font: var(--font-text);
+  --h3-letter-spacing: normal;
+  --h4-size: 1.05em;
+  --h4-weight: 600;
+  --h4-line-height: 1.4;
+  --h4-font: var(--font-text);
+  --h4-style: italic;
+  --h4-letter-spacing: normal;
+  --h5-size: 1em;
+  --h5-weight: 600;
+  --h5-line-height: 1.4;
+  --h5-font: var(--font-text);
+  --h5-color: var(--text-muted);
+  --h5-letter-spacing: normal;
+  --h6-size: 1em;
+  --h6-weight: 600;
+  --h6-line-height: 1.4;
+  --h6-font: var(--font-text);
+  --h6-color: var(--text-muted);
+  --h6-letter-spacing: normal;
+  --inline-title-size: var(--h1-size);
+  --inline-title-weight: var(--h1-weight);
+  --inline-title-line-height: var(--h1-line-height);
+  --inline-title-font: var(--font-text);
+}
+
+/* V2 and V3 transform several heading levels. Restore authored case across
+ * semantic rendered headings and editable Live Preview headings only.
+ * Existing important tracking consumers now resolve the normal tokens above.
+ */
+.workspace-leaf-content[data-type="markdown"] .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
+.workspace-leaf-content[data-type="markdown"] .is-live-preview :is(.HyperMD-header-1, .HyperMD-header-2, .HyperMD-header-3, .HyperMD-header-4, .HyperMD-header-5, .HyperMD-header-6) {
+  text-transform: none;
+}
+
+/* Remove only V3's decorative section rule and its added padding. */
+.workspace-leaf-content[data-type="markdown"] .markdown-rendered :is(h1, h2),
+.workspace-leaf-content[data-type="markdown"] .is-live-preview :is(.HyperMD-header-1, .HyperMD-header-2) {
+  border-block-start: 0;
+}
+
+.workspace-leaf-content[data-type="markdown"] .markdown-rendered :is(h1, h2) {
+  padding-block-start: 0;
+}
+
+/* Obsidian 1.13.7 pads editable headings with --p-spacing. Restore that
+ * native consumer after V3's decorative padding, without adding line margins.
+ */
+.workspace-leaf-content[data-type="markdown"] .is-live-preview :is(.HyperMD-header-1, .HyperMD-header-2) {
+  padding-block-start: var(--p-spacing);
+}
+
+/* The actual baseline nested tip title measured 1.98:1 on light paper
+ * (evidence/CONTRAST-INVESTIGATION.json). Use existing reading ink for ordinary
+ * callout titles; semantic borders, content, folding and geometry stay intact.
+ */
+.workspace-leaf-content[data-type="markdown"] .callout:not([data-callout="note-toolbar"]) {
+  --callout-title-color: var(--text-normal);
+}

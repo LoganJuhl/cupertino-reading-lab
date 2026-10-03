@@ -1,0 +1,7 @@
+{
+  "name": "Cupertino Reading Lab v4",
+  "version": "0.4.5",
+  "build": "updates/0.4.5/BUILD.json",
+  "buildScript": "updates/0.4.5/build.py",
+  "source": "updates/0.4.5/source"
+}

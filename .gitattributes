@@ -1,0 +1,22 @@
+* text=auto eol=lf
+*.woff2 binary
+*.ttf binary
+*.png binary
+*.jpg binary
+*.zip binary
+
+# Preserve upstream license text and historical control bytes verbatim.
+LICENSE whitespace=-blank-at-eol
+theme.css whitespace=-blank-at-eol
+baseline/**/theme.css whitespace=-blank-at-eol
+stages/**/theme.css whitespace=-blank-at-eol
+updates/0.4.1/**/theme.css whitespace=-blank-at-eol
+updates/0.4.5/source/base.css whitespace=-blank-at-eol
+updates/0.4.5/fonts/upstream/OFL.txt whitespace=-blank-at-eol
+resources/qa-fonts/OFL.txt whitespace=-blank-at-eol
+
+# Preserve the original final blank line in historical controls and fixtures.
+baseline/**/LICENSE whitespace=-blank-at-eof
+stages/**/LICENSE whitespace=-blank-at-eof
+updates/0.4.1/**/LICENSE whitespace=-blank-at-eof
+design/QA-NOTE.md whitespace=-blank-at-eof
