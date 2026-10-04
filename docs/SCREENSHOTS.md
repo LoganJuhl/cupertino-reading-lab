@@ -1,21 +1,19 @@
-# Screenshot record and checklist
+# Screenshots
 
-Reviewed **2026-09-22**. These retained images predate the **2026-10-02** width-fallback change and introduce the reading design; fresh actual-app captures are required before packaging the changed CSS:
+The root images predate the 2026-10-02 width-fallback edit. They show the reading design; new captures are needed for the normal package checks.
 
-| File | Shows | Capture |
+| File | Contents | Capture |
 | --- | --- | --- |
-| [screenshot.png](../screenshot.png) | Light Reading View: headings, paragraphs, emphasis, blockquote and link | Actual isolated macOS Obsidian 1.13.7; 1280×720 |
-| [screenshot-dark.png](../screenshot-dark.png) | The same document in dark mode | Same app, font and geometry |
+| [screenshot.png](../screenshot.png) | Light Reading View: headings, paragraphs, emphasis, blockquote, link | macOS Obsidian 1.13.7, 1280×720 |
+| [screenshot-dark.png](../screenshot-dark.png) | Same note, dark | Same app, font, and geometry |
 
-The synthetic note is authored in [capture-publication.cjs](../updates/0.4.5/capture-publication.cjs). CSS SHA-256: `3bc4db727324037065871d2922bca5a1b3211ad0cea17d837a01b3ab71bb8e49`. Capture records and image hashes were verified for that historical CSS during author-review preparation. The current maintenance CSS has a different hash; this record is deliberately not relabeled as a fresh capture. Packaging binds CSS, capture script, runtime identity and both root images to the retained local record.
+The note is authored in [capture-publication.cjs](../updates/0.4.5/capture-publication.cjs). CSS SHA-256 `3bc4db727324037065871d2922bca5a1b3211ad0cea17d837a01b3ab71bb8e49`. Packaging binds CSS, capture script, runtime identity, and both images to the local publication record. The current hash is different, and the stale-capture guard rejects these files for it.
 
-These are not physical-iPhone images or demonstrations of a new sticky-navigation feature. No stock imagery or synthetic phone frame is added.
+Still to capture, on the current CSS:
 
-| Status | Remaining useful capture | Purpose |
-| --- | --- | --- |
-| MANUAL VERIFICATION | Physical iPhone, 0.4.5, Default Text font, synthetic long note with headings/equation. Record device, iOS, app version, mode and tone; portrait/landscape if useful. | Actual mobile reading and fixed prose during equation/table swipes. |
-| MANUAL VERIFICATION | Desktop synthetic callout/table/code note from `design/fixtures`, readable zoom, sidebars collapsed. | Supporting document treatments. |
-| MANUAL VERIFICATION | Same synthetic document in Live Preview at matching size, if editor differences need illustration. | Editing versus Reading View. |
-| MANUAL VERIFICATION | Before submission, export a current thumbnail following then-current guidance. | Directory presentation; unnecessary for author review. |
+- Physical iPhone, Default text font, long synthetic note with a heading and an equation. Record model, iOS, Obsidian version, mode, and tone.
+- Desktop callout, table, and code note from `design/fixtures`, sidebars collapsed.
+- Live Preview of the same note, if the editor difference needs a figure.
+- A 512×288 directory thumbnail, only when submission is actually next.
 
-Keep private notes out of public screenshots. Review device evidence before publication. Desktop phone emulation can be labeled engineering evidence but must not be presented as an iPhone capture.
+Do not put private notes in public screenshots. Label desktop phone emulation as emulation.

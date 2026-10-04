@@ -1,46 +1,55 @@
 # Changelog
 
-## Unreleased maintenance — 2026-10-02
+## Documentation — 2026-10-04
 
-- Restore three Cupertino `-webkit-fill-available` declarations before `width: stretch` for mobile drawer/search controls and banners.
-- Add a focused headless width regression with modern equivalence and simulated rejection controls.
-- Retain the invalid macOS tab calculation pending native geometry review; the mechanical repair shifts the synthetic tab and is not assumed correct.
-- Refresh canonical upstream links, clarify GitHub-source-first sequencing and mark older rendering evidence/captures by their original CSS hash.
-- Keep the working name, version, minimum app version, font bytes and license texts unchanged. No repository publication, outreach or Community submission occurred.
+- Shorten the README and supporting docs; put project status in [UPSTREAM.md](UPSTREAM.md).
+- Link installation to the published prerelease and correct the note `cssclasses` instructions.
+- Update publication and CI records while keeping the earlier rendering results tied to their CSS hashes.
 
-## Author-review preparation — 2026-09-22
+## 0.4.5 prerelease — 2026-10-03
 
-- Put Cupertino lineage and the requested attribution prominently in the README.
-- Add source-backed comparison, licensing/provenance questions, author checklist and outreach draft.
-- Preserve compatibility history and strengthen public-file, notice and screenshot packaging gates.
-- Keep the 0.4.5 CSS, fonts, manifest and installer bytes unchanged. No public release or directory submission was made.
+First public prerelease. Includes the width fixes below and the earlier 0.4.5 equation scroller. [Release and downloads](https://github.com/LoganJuhl/cupertino-reading-lab/releases/tag/0.4.5).
 
-## 0.4.5 — Reading View equations
+## Width compatibility — 2026-10-02
 
-- Keep long display equations in a local horizontal scroller so the surrounding note stays within its pane.
-- Exercise fully rendered math in long notes, including repeated scrolling past the equation.
-- Preserve the bundled Newsreader font bytes, prose layout, and independent table scrolling.
+- Restore three Cupertino `width: -webkit-fill-available` declarations before `width: stretch` on mobile drawer search, the phone drawer selector, and banners.
+- Add a headless width regression: modern equivalence, and a simulated `stretch` rejection.
+- Leave the invalid macOS tab-padding expression unchanged. The mechanical repair moves the synthetic tab and is not verified against a real titlebar.
+- Point canonical links at `svnaxis/obsidian-cupertino`. Older captures stay bound to CSS `3bc4db72…`.
 
-## 0.4.4 — Public release preparation
+Working name, version, minimum app version, font bytes, and license texts are unchanged.
 
-- Include complete notices for inherited Minimal helpers and Lucide artwork inside the installed CSS and license.
-- Provide a reproducible public build, pinned development tools, and CI checks.
-- Document the theme's Cupertino-derived long-form reading focus.
-- Extend runtime coverage for pane layouts, wide content, and core interface surfaces.
-- Measure explicit edge-to-edge helpers inside the note scroller so native scrollbars do not clip content.
-- Correct the inherited phone Bases width rule and keep large Mermaid diagrams within a local horizontal scroller.
+## 2026-09-22
 
-The bundled font bytes, ordinary prose measure, heading hierarchy, palette, and phone settings repair are unchanged from accepted 0.4.3. New rendering changes are limited to wide-content handling.
+- Put Cupertino attribution in the README.
+- Add the comparison, notice map, and outreach draft.
+- Tighten public-file, notice, and screenshot packaging checks.
+
+CSS, fonts, manifest, and installer bytes were not changed.
+
+## 0.4.5 development — Reading View equations
+
+- Keep long display equations in a local horizontal scroller.
+- Exercise rendered math in long notes, including scroll-away and return.
+- Font bytes, prose layout, and table scrolling unchanged.
+
+## 0.4.4 — Release preparation
+
+- Embed Minimal and Lucide notices in the installed CSS and license.
+- Reproducible public build, pinned tools, CI.
+- Measure explicit edge-to-edge helpers inside the note scroller so a native scrollbar does not clip them.
+- Correct the inherited phone Bases width rule. Large Mermaid diagrams scroll locally.
+
+Font bytes, prose measure, heading hierarchy, palette, and the phone settings repair are unchanged from 0.4.3.
 
 ## 0.4.3 — Phone settings
 
-- Keep native phone dropdown sizing and wrap adjacent actions, fixing an off-screen Manage button.
-- Verify every visible Appearance control and its scroll ancestors in the expanded settings matrix.
+- Keep native phone dropdown sizing and wrap adjacent actions. Fixes an off-screen Manage button.
 
 ## 0.4.2 — Newsreader
 
-- Bundle eight static Newsreader faces with matching italics.
-- Restore keyboard focus for settings switches and correct desktop dropdown sizing.
-- Normalize owned CSS while preserving the reading layout and native table behavior.
+- Bundle eight static Newsreader faces, with italics.
+- Keyboard focus on settings switches. Desktop dropdown sizing.
+- Normalize owned CSS. Native table behavior kept.
 
-Earlier private development snapshots remain local archives; they are not public release claims.
+Earlier private snapshots are local archives, not releases.

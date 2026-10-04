@@ -1,12 +1,12 @@
 # Build and test
 
-`CURRENT.json` selects the maintained source. The release build reads five authored CSS modules, verifies the checked-in static font hashes, embeds their data and notices, and produces an installer folder. `npm run build` also exports the current CSS, manifest, compatibility map, and license to the repository root.
+`CURRENT.json` selects the maintained source. The build reads five CSS modules, checks the static font hashes, embeds font data and notices, and writes an installer folder. `npm run build` also copies CSS, manifest, `versions.json`, and `LICENSE` to the repo root.
 
-The versioned source directory identifies the current review candidate. The root distribution is generated from it; no public release has been made. Earlier controls under `baseline`, `stages`, and `updates/0.4.1` are synthetic regression inputs. They are not active theme variants or alternative source locations.
+`updates/0.4.5/` holds the current source. `baseline/`, `stages/`, and `updates/0.4.1/` are historical regression inputs.
 
-## Reproducible build
+## Build
 
-Use Python 3.11 or later and Node 22 or later. CI uses Python 3.12 and Node 24.
+Python 3.11+ and Node 22+. CI uses Python 3.12 and Node 24.
 
 ```sh
 npm ci --ignore-scripts
@@ -14,21 +14,21 @@ npm run build
 npm run check
 ```
 
-`check:build` rebuilds in a temporary directory and compares all four installer files. Official Obsidian lint covers every current CSS module and compiled output. `check:public` verifies root outputs, metadata, JSON, local links, embedded assets, required notices, and the Git-visible inventory. Warnings remain visible; the lint gate requires zero errors. Five offline maintenance regressions check compatibility history, stale screenshot evidence, public-gate rejection, custom evidence paths and notice/attribution removal. Complete upstream/font notice text and the required attribution paragraph are checked, not just license keywords.
+`check:build` rebuilds in a temporary directory and compares the four installer files. Lint covers every current CSS module and the compiled file. `check:public` checks root outputs, metadata, local links, embedded assets, notices, and the Git-visible inventory. Lint must have zero errors; warnings stay visible. `test:maintenance` covers compatibility history, stale screenshot evidence, public-gate rejection, custom evidence paths, and notice removal.
 
-The maintained project MIT notice is `licenses/Reading-Lab-MIT.txt`; the current build no longer takes its license from a historical test fixture. Root LICENSE remains a generated composite of project and third-party notices.
+Project MIT text lives in `licenses/Reading-Lab-MIT.txt`. Root `LICENSE` is a generated composite.
 
-The four small refinement modules retain strict rules. Scoped exceptions for inherited cascade, externally owned selectors, animation names, and WebKit properties are documented in the configuration. The browser target matches the tested Electron 39 shell; this does not establish native iOS compatibility. Git preserves trailing spaces only in the identified inherited CSS, control fixtures, and license text; new modules and documentation retain ordinary whitespace checks.
+The four small modules keep strict stylelint rules. Exceptions for the inherited cascade, app-owned selectors, animation names, and WebKit properties are in `stylelint.config.mjs`. The browser target is the tested Electron 39 shell, not a native iOS floor. Git keeps trailing spaces only in identified inherited CSS, control fixtures, and license text.
 
-## Actual Obsidian runtime
+## Obsidian runtime
 
-The macOS harness expects Obsidian 1.13.7 and Electron 39.8.3. It makes a disposable copy of a locally installed app and a new synthetic vault. Proprietary app files and runtime captures stay in ignored directories; they are never published. Supply the app and update-ASAR locations explicitly through the two shell variables below.
+The macOS harness expects Obsidian 1.13.7 and Electron 39.8.3. It copies a local app install and creates a synthetic vault. App files and captures stay in ignored directories.
 
 ```sh
 python3 scripts/prepare-qa.py --installed-app "$OBSIDIAN_APP" --update-asar "$OBSIDIAN_ASAR" --work work/qa
 ```
 
-Launch only the copied executable printed by the script, with its printed localhost debugging arguments. Then set `QA_WORK` to the printed work directory and `QA_CDP` to its localhost endpoint. The guards reject personal vaults, missing markers, mismatched themes, and unexpected app versions. Do not use a personal app's debugging endpoint.
+Launch only the copied executable the script prints, with its localhost debugging arguments. Set `QA_WORK` to the printed work directory and `QA_CDP` to its endpoint. The guards reject personal vaults, missing markers, a mismatched theme, and an unexpected app version.
 
 ```sh
 npx playwright install chromium webkit
@@ -48,36 +48,34 @@ node updates/0.4.5/check-math-webkit.cjs
 node updates/0.4.5/check-ui.cjs
 ```
 
-Run app suites sequentially: they share the disposable renderer. Raw evidence, screenshots, commands, and failures stay local. `QA_EVIDENCE` selects the core evidence and runner-log directory; packaging uses that same core location. Actual-app, standalone-browser, emulated-device, and physical-device observations are distinct. Changed CSS or harness inputs require fresh relevant evidence. Historical controls intentionally use separate QA font faces; the shipped-font suite loads only the embedded production faces.
+Run app suites one at a time. They share the disposable renderer. `QA_EVIDENCE` selects the core evidence directory; packaging reads that same location. Actual-app, standalone-browser, emulated-device, and physical-device results are separate. Changed CSS needs fresh evidence. Historical controls use separate QA font faces. The shipped-font suite loads only the embedded faces.
 
-The math suite records every animation frame while opening a long synthetic note and scrolling away from and back to its equation ten times. It compares the current CSS with the same CSS minus only the repair rule. Math readiness requires glyphs, applied layout styles, and loaded fonts; both formula ends must remain reachable. The companion Chromium/WebKit suite uses bundled MathJax assets served from the explicit local ASAR without network access.
+The math suite records animation frames while opening a long synthetic note and scrolling past its equation ten times. It compares current CSS with the same CSS minus the repair rule. Both formula ends must stay reachable. The Chromium/WebKit companion serves bundled MathJax from the local ASAR, with no network.
 
-The expanded suite enables built-in navigation, Bases, and Canvas only inside the synthetic vault. The Mermaid trust prompt is accepted only for these generated fixtures. The UI suite temporarily selects themeable app menus, then restores the native-menu setting; operating-system menus are outside CSS testing. The WebKit helper suite uses serialized synthetic app DOM and does not represent a physical phone run.
+The expanded suite enables navigation, Bases, and Canvas only in the synthetic vault, and accepts the Mermaid trust prompt only for those fixtures. The UI suite selects themeable app menus, then restores the native-menu setting. OS menus are out of scope. The WebKit helper suite uses serialized app DOM. It is not a phone run.
 
-Dataview testing runs separately. It is optional during ordinary development but required by the current candidate/release packaging gate. Download `main.js`, `manifest.json`, and `styles.css` from the official [0.5.70 release](https://github.com/blacksmithgu/obsidian-dataview/releases/tag/0.5.70) into an ignored directory, then set `QA_DATAVIEW` to it and run `node updates/0.4.5/check-dataview.cjs`. The script verifies all three pinned hashes, tests only declarative DQL, and disables the plugin afterward. Upstream's 0.5.70 asset declares version 0.5.68 in its manifest; the evidence records both values without altering the plugin.
+Dataview is optional in day-to-day work and required by the current packaging gate. Download `main.js`, `manifest.json`, and `styles.css` from [Dataview 0.5.70](https://github.com/blacksmithgu/obsidian-dataview/releases/tag/0.5.70) into an ignored directory, set `QA_DATAVIEW`, and run `node updates/0.4.5/check-dataview.cjs`. The script checks the three pinned hashes, runs declarative DQL only, and disables the plugin. The 0.5.70 asset declares 0.5.68 in its manifest; evidence records both.
 
 ## Fonts
 
-Normal builds need no font tooling. Optional regeneration uses `fonttools[woff]==4.60.2` and `brotli==1.2.0`, then `python3 updates/0.4.5/build-fonts.py`. The checked-in original files, licenses, provenance, and eight output hashes allow exact reproduction. No glyph subsetting or runtime variation axes are used.
+Normal builds need no font tools. To regenerate: `fonttools[woff]==4.60.2`, `brotli==1.2.0`, then `python3 updates/0.4.5/build-fonts.py`. Checked-in originals, licenses, provenance, and eight output hashes are the reproduction set. No subsetting. No runtime variation axes.
 
-## Package and release
+## Package
 
-`npm run package:candidate` creates a private device-test installer after the automated evidence gates. `npm run package:release` additionally requires a current physical acceptance record, including the device and app/OS versions. Do not relabel an old device observation as a fresh test of changed rendering CSS.
+`npm run package:candidate` writes a private device-test installer after the automated evidence gates. `npm run package:release` also requires a current physical acceptance record with device, app, and OS versions.
 
-The current sequence prepares GitHub source first, resolves repository/name decisions, publishes when those decisions permit, and then revises Community-permission outreach. A naming discussion with Alexis may precede a rename. The [author-review checklist](AUTHOR-REVIEW-READINESS.md) and [directory policy record](COMMUNITY-DIRECTORY.md) separate outreach, source hosting and eventual submission. Publishing needs owner approval; directory submission additionally needs the public author approval described there.
+The release tag must match the manifest version, with no `v` prefix. Attach generated `theme.css`, `manifest.json`, `LICENSE`, the installer ZIP, and checksums.
 
-Publish only after reviewing the actual Git file list and final tests. The release tag must exactly match the manifest version, with no `v` prefix. Attach the generated `theme.css`, `manifest.json`, installer ZIP, and checksums. Publishing to GitHub does not submit the theme to the Community Theme directory.
+Packaging checks both root previews against the CSS, capture script, and runtime identity in the local publication record. Static CI can run from a clean checkout. Packaging needs local runtime evidence.
 
-Packaging also runs the public-file gate and validates both root previews against the CSS, capture script and runtime identity in the local publication record. A clean source checkout can run static CI checks; packaging intentionally requires separately generated local runtime evidence.
+The published 0.4.5 prerelease uses separately prepared owner-test packages. Passing the normal candidate and stable package checks remains outstanding; see [validation](VALIDATION.md#packaging).
 
-A successful package gate reports a private candidate or a technical release package. It is technical evidence, not author permission, trademark clearance or Community-directory approval. Resolve the separate checklist items before broader distribution.
+## Width-fallback regression
 
-## Focused width-fallback regression
-
-The maintenance check uses synthetic drawer/banner DOM and the locally extracted Obsidian stylesheet. It launches headless Chromium and WebKit, blocks network requests, tests both tones at 320/390/932 px, compares modern rendering with and without the three fallbacks, and removes `stretch` declarations to simulate rejection. That last variant is not an older-engine or physical-device test. Raw results include input hashes and must use a new output folder so prior attempts remain intact.
+Synthetic drawer and banner DOM, plus the locally extracted Obsidian stylesheet. Headless Chromium and WebKit, network blocked, both tones, 320/390/932 px. One variant drops the three fallbacks. One drops `stretch` to simulate rejection. The rejection variant is not an older engine and not a device.
 
 ```sh
 QA_APP_CSS=work/qa/app/app.css node scripts/check-width-fallbacks.cjs
 ```
 
-This check is separate from static CI because the local Obsidian stylesheet and browser runtimes are not distributed. On hosts where `python3` is a system developer-tools stub, invoke the documented Python scripts with the installed Python 3.11+ executable; accepting an Xcode license is not part of theme validation.
+The local stylesheet and browser runtimes are not in the repo, so this check is outside static CI. If `python3` is an Xcode stub, call the documented scripts with a real Python 3.11+ binary.
