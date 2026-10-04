@@ -62,13 +62,13 @@ Normal builds need no font tools. To regenerate: `fonttools[woff]==4.60.2`, `bro
 
 ## Package
 
-`npm run package:candidate` writes a private device-test installer after the automated evidence gates. `npm run package:release` also requires a current physical acceptance record with device, app, and OS versions.
+`npm run package:candidate` writes a private device-test installer after checking the build, app-test results, and screenshots. `npm run package:release` also requires a passing physical-device test record for this CSS, with device, app, and OS versions.
 
 The release tag must match the manifest version, with no `v` prefix. Attach generated `theme.css`, `manifest.json`, `LICENSE`, the installer ZIP, and checksums.
 
 Packaging checks both root previews against the CSS, capture script, and runtime identity in the local publication record. Static CI can run from a clean checkout. Packaging needs local runtime evidence.
 
-The published 0.4.5 prerelease uses separately prepared owner-test packages. Passing the normal candidate and stable package checks remains outstanding; see [validation](VALIDATION.md#packaging).
+The published 0.4.5 ZIPs were prepared outside these two scripts. The missing test results and captures are listed in [validation](VALIDATION.md#packaging).
 
 ## Width-fallback regression
 

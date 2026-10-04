@@ -4,9 +4,9 @@ A Cupertino-derived Obsidian theme for long-form reading.
 
 This theme is based on the outstanding Cupertino theme created by Alexis C. Cupertino provides much of the visual foundation and native-feeling interface that made this project possible. This project extends that foundation with a different focus: long-form reading and document consumption in Obsidian.
 
-[Cupertino](https://github.com/svnaxis/obsidian-cupertino) is by [Alexis C.](https://github.com/svnaxis). This derivative is maintained by Logan Juhl. It is not an official Cupertino release. Lineage, license, and approval status: [UPSTREAM.md](UPSTREAM.md).
+[Cupertino](https://github.com/svnaxis/obsidian-cupertino) is by [Alexis C.](https://github.com/svnaxis). I maintain Reading Lab as an independent derivative. It isn't an official Cupertino release. See [UPSTREAM.md](UPSTREAM.md) for its history and status.
 
-**[Download 0.4.5](https://github.com/LoganJuhl/cupertino-reading-lab/releases/tag/0.4.5)** — a prerelease for manual installation. [Project status](UPSTREAM.md#status).
+**[Download 0.4.5](https://github.com/LoganJuhl/cupertino-reading-lab/releases/tag/0.4.5)** — prerelease, manual install.
 
 ![Light reading view](screenshot.png)
 
@@ -35,13 +35,11 @@ Both images are macOS Obsidian captures of a synthetic note. They predate the Oc
 4. Select **Cupertino Reading Lab v4** under **Settings → Appearance**.
 5. Leave **Text font** at Default for Newsreader.
 
-Alternatively, extract the release's `Cupertino-Reading-Lab-v4-0.4.5-owner-test-install.zip` into `.obsidian/themes/`, then follow steps 4–5. The theme needs no plugin, account, or remote font request. Back up an existing theme folder before replacing it; restore that folder or select Cupertino to roll back.
+Or extract `Cupertino-Reading-Lab-v4-0.4.5-owner-test-install.zip` into `.obsidian/themes/`, then follow steps 4–5. No plugin, account, or remote font download is needed. Back up an existing theme folder before replacing it. To roll back, restore that folder or select your previous theme.
 
 ## Compatibility
 
-The manifest minimum is Obsidian **1.13.4**. The full runtime checks used **1.13.7** and Electron **39.8.3** on macOS, in light and dark mode, Reading View, Live Preview, and Source Mode. Those checks cover the preceding CSS; the current build has focused width checks and supplemental macOS checks. The minimum version, Windows, Linux, and physical iPhone behavior remain unverified.
-
-Details: [validation](docs/VALIDATION.md), [maintenance](docs/MAINTENANCE-REVIEW.md).
+The declared minimum is Obsidian **1.13.4**. Testing used **1.13.7** / Electron **39.8.3** on macOS. The released CSS has focused width and macOS checks; the broader light/dark and editor-mode tests cover the preceding build. Obsidian 1.13.4, Windows, Linux, and physical-device coverage remain unverified. See [test results and limits](docs/VALIDATION.md).
 
 ## Development
 

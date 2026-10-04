@@ -5,6 +5,7 @@
 - Shorten the README and supporting docs; put project status in [UPSTREAM.md](UPSTREAM.md).
 - Link installation to the published prerelease and correct the note `cssclasses` instructions.
 - Update publication and CI records while keeping the earlier rendering results tied to their CSS hashes.
+- Use first person for personal observations, shorten publication checklists, and clarify candidate versus stable packaging requirements.
 
 ## 0.4.5 prerelease — 2026-10-03
 

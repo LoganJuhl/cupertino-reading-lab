@@ -22,8 +22,10 @@ Cupertino credits Minimal and Craft Docs. Known Minimal and Lucide notices are p
 
 ## Status
 
-Updated 2026-10-04. [0.4.5](https://github.com/LoganJuhl/cupertino-reading-lab/releases/tag/0.4.5) was published on 2026-10-03 as a prerelease for manual installation. Its source and six attached assets come from commit [`0717348`](https://github.com/LoganJuhl/cupertino-reading-lab/commit/07173489d1c6f3db7daed9f14d59fd102d362714). The default branch now carries revised documentation; the tag and release assets retain the original snapshot.
+Updated 2026-10-04. [0.4.5](https://github.com/LoganJuhl/cupertino-reading-lab/releases/tag/0.4.5) is a prerelease for manual install, published 2026-10-03 from [`0717348`](https://github.com/LoganJuhl/cupertino-reading-lab/commit/07173489d1c6f3db7daed9f14d59fd102d362714). The default branch has newer docs. The tag and release assets retain the original snapshot.
 
-The release includes the three restored WebKit width fallbacks. Automated build and regression checks passed. Logan reported no scrolling or mobile-spacing issues in personal use; formal physical-device acceptance and a full runtime check of the released CSS remain incomplete. The screenshots show the preceding CSS. Test results and remaining limits are in [VALIDATION.md](docs/VALIDATION.md).
+The release restores three WebKit width fallbacks. Build and regression checks passed, including [CI on that commit](https://github.com/LoganJuhl/cupertino-reading-lab/actions/runs/37156955844). The full app test matrix and screenshots still cover the preceding CSS. See [test results and limits](docs/VALIDATION.md).
 
-The theme has not been submitted to the Community directory, and no approval from Alexis is recorded. The name remains **Cupertino Reading Lab v4**. Discuss any proposed rename with Alexis before submission. Directory requirements are in [COMMUNITY-DIRECTORY.md](docs/COMMUNITY-DIRECTORY.md).
+I haven't noticed scrolling or mobile-spacing issues in personal use. I didn't record the device model, OS, or Obsidian version, so this isn't a recorded device test.
+
+The theme hasn't been submitted to the Community directory, and no approval from Alexis is recorded. The name remains **Cupertino Reading Lab v4**. Discuss any proposed rename with him before submission, when the directory name becomes fixed. Requirements: [COMMUNITY-DIRECTORY.md](docs/COMMUNITY-DIRECTORY.md).

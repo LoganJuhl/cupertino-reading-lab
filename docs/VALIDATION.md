@@ -4,7 +4,7 @@
 
 Distributed CSS SHA-256: `8b23a22cfe4e34443ed6a9e61c58ff6b3b47f2d6c7a80c9bd52199e7fc867ff9`.
 
-Production diff is three restored `width: -webkit-fill-available` declarations. Version 0.4.5 and minimum 1.13.4 are unchanged.
+The production diff from the preceding build is three restored `width: -webkit-fill-available` declarations. Version 0.4.5 and minimum 1.13.4 are unchanged.
 
 | Check | Result |
 | --- | --- |
@@ -21,17 +21,15 @@ Production diff is three restored `width: -webkit-fill-available` declarations. 
 
 The width suite drops `stretch` in one variant to simulate rejection. Both installed engines accept `stretch`, so that variant is not an older-WebKit result. At 390 px WebKit light, the search field was 358 px with the fallback and 390 px without; the expanded selector 358 px versus about 66.7 px; the small banner 374 px versus 240 px.
 
-## Opening and settled-layout checks — publication follow-up
+## Opening drift — publication follow-up
 
-The [0.4.5 release record](https://github.com/LoganJuhl/cupertino-reading-lab/releases/tag/0.4.5) retains the original animated-opening result: **FAIL, 1.00396728515625 px against the 1 px limit**. Separate supplemental macOS checks measured zero drift across 96 settled frames in eight windows and caught a 2 px control. The settled-frame result does not resolve the opening failure.
-
-Logan reported no scrolling or mobile-spacing issues in personal use. Device model, OS/app versions, and test coverage were not recorded, so physical-device acceptance remains incomplete.
+The animated-opening check **failed: 1.00396728515625 px against a 1 px limit**. Later macOS checks measured zero drift across 96 settled frames in eight windows and caught an injected 2 px control; those settled frames don't clear the opening failure. No CSS change followed.
 
 ## Preceding CSS — 2026-09-21
 
 SHA-256 `3bc4db727324037065871d2922bca5a1b3211ad0cea17d837a01b3ab71bb8e49`. These results bind that CSS, the scripts, the runtime, the fixtures, and the screenshots. Documentation checks were refreshed on 2026-09-22 without a new device run.
 
-An earlier report of intermittent overflow beside a long equation prompted the math scroller. The user reported no flicker with Default fonts at that time.
+Intermittent overflow beside a long equation prompted the math scroller. I didn't notice flicker with Default fonts at the time.
 
 | Check | Result |
 | --- | --- |
@@ -71,4 +69,4 @@ The October build adds three duplicate-property warnings for the width fallback,
 
 ## Packaging
 
-The published prerelease uses separately prepared owner-test packages. The normal candidate and stable package checks have not passed for this CSS: fresh actual-app evidence and captures are still required, and stable packaging also needs physical-device acceptance. Commands are in [DEVELOPMENT.md](DEVELOPMENT.md#package); publication status is in [UPSTREAM.md](../UPSTREAM.md#status).
+The published ZIPs were prepared outside `npm run package:candidate` and `npm run package:release`. Both scripts require fresh app-test results and captures for this CSS. Stable packaging also requires a physical-device test record. These checks remain incomplete. See [package commands](DEVELOPMENT.md#package) and [project status](../UPSTREAM.md#status).
