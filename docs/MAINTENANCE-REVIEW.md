@@ -1,6 +1,6 @@
 # Maintenance review
 
-October follow-up against the September review. Current `base.css` SHA-256 `59198c78404b632629839df0b6ce598fe123f7e576588d8e97902f92ade330da`. Distributed CSS `8b23a22cfe4e34443ed6a9e61c58ff6b3b47f2d6c7a80c9bd52199e7fc867ff9`.
+October follow-up against the September review, covering published 0.4.5. Reviewed `base.css` SHA-256 `59198c78404b632629839df0b6ce598fe123f7e576588d8e97902f92ade330da`. Distributed CSS `8b23a22cfe4e34443ed6a9e61c58ff6b3b47f2d6c7a80c9bd52199e7fc867ff9`. The later unreleased highlight correction is recorded in [validation](VALIDATION.md#unreleased-highlight-compatibility--2026-10-08).
 
 September review hashes: Cupertino reference `b15328a3f3fe2eff18e58e55304fcdd38a17b69d23576c313be3a3e13f0b54b3`, reviewed `base.css` `3d6f1ab18b65b187f59bc2af9114a07c46ce1bc9c476b5890998f36502760376`, distributed CSS `3bc4db727324037065871d2922bca5a1b3211ad0cea17d837a01b3ab71bb8e49`.
 

@@ -1,5 +1,21 @@
 # Validation
 
+## Unreleased highlight compatibility — 2026-10-08
+
+Candidate CSS SHA-256: `892c603cc18b8ef6c43a35a10667f3182bf7cae2e7a3e76c63484a92dd163311`.
+
+Obsidian 1.14.4 uses an image for the Live Preview highlight color picker. Inherited full-width media rules stretched that image and replaced its color. Following [Cupertino's highlight correction](https://github.com/svnaxis/obsidian-cupertino/commit/d25b499a112509ed1d9092803547369e42d0469d), this candidate excludes `.highlight-swatch` from both media rules. It also excludes the swatch from the inherited `img-100` square-corner rule. The six selector exclusions leave all declarations unchanged. No widget-padding or other Cupertino 4.1.0 styling is imported.
+
+The generated root CSS is a branch candidate. The published 0.4.5 tag and release assets retain the hash recorded below. Version and minimum-version metadata remain unchanged.
+
+The selector regression is included in `npm run check` and rejects each of six missing exclusions. For the browser regression, set `QA_APP_CSS` to locally extracted Obsidian `app.css`, then run `npm run test:highlight:render`; optional `QA_HIGHLIGHT_EVIDENCE` chooses a fresh output directory. Runtime assets and reports are not distributed.
+
+The browser matrix passed in Chromium 151.0.7922.34 and WebKit 26.5: 390/900 px, light/dark, editor/preview selector branches, default/`img-wide`/`img-max`/`img-100` helpers, and independent media/block-width switches. All 256 cases with candidate and pre-fix controls passed. Checks cover swatch size, themed color, circular corners, and unchanged ordinary, explicit-width, emoji, favicon, widget-buffer and banner images. Preview widgets are synthetic selector coverage, not a claim that native Reading View contains the Live Preview picker.
+
+Actual-app validation passed 32 cases in an isolated macOS Obsidian 1.14.4 / Electron 43.7.7 / Chromium 150.0.7871.250 application and synthetic vault: 390/900 px, light/dark, media on/off and all four helper states. Pointer clicks opened the supported themeable picker (`nativeMenus=false`) and selected Green; the changed Markdown was verified in the editor and saved file. Red, green and blue swatches retained native size, color and roundness; ordinary and explicit-width images stayed unchanged during selection.
+
+The macOS OS-menu selection attempt was inconclusive; that menu path is not verified. Narrow desktop windows are not mobile tests. Minimum Obsidian 1.13.4, physical phones, older WebKit and the full reading/scroll matrix remain untested for this candidate. Build, independent rebuild, public inventory/assets/notices, five maintenance tests and the selector gate passed; lint retains zero errors and the existing 225 warnings in each inherited base/compiled stylesheet. Historical release results and the recorded opening-drift result remain below.
+
 ## Released CSS — width checks from 2026-10-02
 
 Distributed CSS SHA-256: `8b23a22cfe4e34443ed6a9e61c58ff6b3b47f2d6c7a80c9bd52199e7fc867ff9`.

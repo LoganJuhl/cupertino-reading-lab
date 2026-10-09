@@ -3027,12 +3027,12 @@ body:not(.mod-macos,.adaptive-mode-off) .setting-item[data-id="colorful-frame"],
     padding-inline-end: 0;
   }
 
-  body:not(.full-width-media-off) .markdown-preview-sizer .image-embed:not([width]),body:not(.full-width-media-off) .markdown-preview-sizer .image-embed:not([width])>.image-wrapper,body:not(.full-width-media-off) .markdown-preview-sizer iframe,body:not(.full-width-media-off) .markdown-preview-sizer video,body:not(.full-width-media-off) .markdown-preview-sizer img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,[alt="banner"]),body:not(.full-width-media-off) .cm-content .image-embed:not([width]),body:not(.full-width-media-off) .cm-content .image-embed:not([width])>.image-wrapper,body:not(.full-width-media-off) .cm-content iframe,body:not(.full-width-media-off) .cm-content video,body:not(.full-width-media-off) .cm-content img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,[alt="banner"]) {
+  body:not(.full-width-media-off) .markdown-preview-sizer .image-embed:not([width]),body:not(.full-width-media-off) .markdown-preview-sizer .image-embed:not([width])>.image-wrapper,body:not(.full-width-media-off) .markdown-preview-sizer iframe,body:not(.full-width-media-off) .markdown-preview-sizer video,body:not(.full-width-media-off) .markdown-preview-sizer img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,.highlight-swatch,[alt="banner"]),body:not(.full-width-media-off) .cm-content .image-embed:not([width]),body:not(.full-width-media-off) .cm-content .image-embed:not([width])>.image-wrapper,body:not(.full-width-media-off) .cm-content iframe,body:not(.full-width-media-off) .cm-content video,body:not(.full-width-media-off) .cm-content img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,.highlight-swatch,[alt="banner"]) {
     width: 100%;
     padding: 0;
   }
 
-  body:not(.full-width-media-off) .markdown-preview-sizer iframe,body:not(.full-width-media-off) .markdown-preview-sizer video,body:not(.full-width-media-off) .markdown-preview-sizer img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,[alt="banner"]),body:not(.full-width-media-off) .cm-content iframe,body:not(.full-width-media-off) .cm-content video,body:not(.full-width-media-off) .cm-content img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,[alt="banner"]) {
+  body:not(.full-width-media-off) .markdown-preview-sizer iframe,body:not(.full-width-media-off) .markdown-preview-sizer video,body:not(.full-width-media-off) .markdown-preview-sizer img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,.highlight-swatch,[alt="banner"]),body:not(.full-width-media-off) .cm-content iframe,body:not(.full-width-media-off) .cm-content video,body:not(.full-width-media-off) .cm-content img:not([width],.cm-widgetBuffer,.link-favicon,.emoji,.highlight-swatch,[alt="banner"]) {
     background: var(--background-primary-alt);
     max-height: 75vh;
     object-fit: contain;
@@ -6778,7 +6778,7 @@ body:not(.block-width-off) .img-100 {
   --img-line-width-offset: var(--block-width-offset);
 }
 
-body:not(.block-width-off) .img-100 .markdown-preview-sizer img:not([alt="banner"]),body:not(.block-width-off) .img-100 .cm-content img:not([alt="banner"]) {
+body:not(.block-width-off) .img-100 .markdown-preview-sizer img:not(.highlight-swatch,[alt="banner"]),body:not(.block-width-off) .img-100 .cm-content img:not(.highlight-swatch,[alt="banner"]) {
   border-radius: 0 !important;
 }
 
